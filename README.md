@@ -1,48 +1,66 @@
-# Watcher Bot
+<h1 align="center">👁️ Watcher Bot</h1>
+<p align="center">
+  Bot Discord de monitoramento e alertas em tempo real.
+</p>
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img alt="Discord.py" src="https://img.shields.io/badge/Discord.py-5865F2?style=for-the-badge&logo=discord&logoColor=white"/>
+  <img alt="Deploy" src="https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel"/>
+</p>
 
-Bot simples de Discord que monitora os canais de voz e avisa quando alguem entra em call.
+---
 
-## Como usar
+## 📋 Sobre
 
-1. Crie um bot no [Portal do Discord](https://discord.com/developers/applications), copie o token e convide-o para seu servidor com a permissao `View Channels`.
-2. Descubra o ID do canal de texto onde quer receber os alertas (clique com o botao direito -> **Copiar ID**, com o modo de desenvolvedor ativado).
-3. Configure as variaveis de ambiente (ou crie um arquivo `.env` na raiz do projeto com as mesmas chaves):
+**Watcher Bot** é um bot para **Discord** desenvolvido em Python com a biblioteca `discord.py`. Monitora eventos específicos e envia alertas personalizados para canais Discord, com suporte a comandos e configurações por servidor.
 
-   ```powershell
-   setx DISCORD_TOKEN "<TOKEN_DO_BOT>"
-   setx ALERT_CHANNEL_ID "<ID_NUMERICO_DO_CANAL>"
-   ```
+## ✨ Funcionalidades
 
-   Arquivo `.env` equivalente:
+- 👁️ Monitoramento em tempo real de eventos
+- 🔔 Alertas customizados para jogadores/usuários específicos
+- 💬 Comandos interativos via prefix ou slash commands
+- ⚙️ Configuração por servidor Discord
+- 🌐 Deploy disponível em: [watcher-bot-eight.vercel.app](https://watcher-bot-eight.vercel.app)
 
-   ```
-   DISCORD_TOKEN=<TOKEN_DO_BOT>
-   ALERT_CHANNEL_ID=<ID_NUMERICO_DO_CANAL>
-   ```
+## 📦 Instalação
 
-4. Instale as dependencias e execute o bot:
+```bash
+git clone https://github.com/LuigiNeto01/Watcher_bot.git
+cd Watcher_bot
 
-   ```powershell
-   python -m venv .venv
-   .\.venv\Scripts\Activate.ps1
-   pip install -r requirements.txt
-   python bot.py
-   ```
+pip install -r requirements.txt
 
-Quando um usuario (nao bot) entrar em qualquer canal de voz (estava fora de call e conectou), o bot enviara um embed no canal configurado avisando que ha player em call e indicando qual canal foi usado.
+# Configure o token do bot:
+cp .gitignore .env.example  # crie um .env
+# Adicione: DISCORD_TOKEN=seu_token_aqui
+```
 
-## Jogadores monitorados
+## ⚙️ Configuração
 
-O arquivo `bot.py` possui a lista `WATCHED_PLAYER_HANDLES` com os nicks que devem disparar alertas. Essa lista foi preenchida com:
+Crie um arquivo `.env` na raiz:
 
-- `.thierry.`
-- `leon3to`
-- `cl4upy`
-- `lucaabenda_57238`
-- `luigineto`
+```env
+DISCORD_TOKEN=seu_token_bot_discord
+```
 
-Certifique-se de que o `display name`, `global name` ou `username` no Discord de cada amigo combina exatamente com esses identificadores (sem o `@`). Quando um deles entra em call:
+## 🔧 Uso
 
-- Todos os outros recebem um ping no canal configurado, exceto o proprio jogador que entrou.
-- Apenas quem estiver fora da call naquele momento recebe o ping. Se dois amigos ja estao na call e um terceiro entra, so os outros que estiverem fora sao notificados.
-- Certifique-se de adicionar ou remover nomes da lista `WATCHED_PLAYER_HANDLES` conforme o grupo crescer ou mudar.
+```bash
+python bot.py
+```
+
+O bot ficará online e pronto para receber comandos no seu servidor Discord.
+
+## 🚀 Tecnologias
+
+- **Python 3.x**
+- **discord.py** — Biblioteca para bots Discord
+- **python-dotenv** — Variáveis de ambiente
+
+## 📝 Licença
+
+Este projeto está disponível como open source.
+
+---
+
+<p align="center">Feito com ❤️ por <a href="https://github.com/LuigiNeto01">LuigiNeto01</a> | <a href="https://watcher-bot-eight.vercel.app">Demo</a></p>
